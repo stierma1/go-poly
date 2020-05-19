@@ -1,4 +1,4 @@
-package gopoly
+package polynomial
 
 import "math"
 
