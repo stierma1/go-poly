@@ -159,7 +159,20 @@ func TestPolynomial_RootNewton(t *testing.T) {
 		want   float64
 		want1  bool
 	}{
-		// TODO: Add test cases.
+		{
+			"test",
+			fields{[]float64{-1.0, 0, 1}},
+			args{.5, .00000001, 5},
+			1,
+			true,
+		},
+		{
+			"test",
+			fields{[]float64{-1.0, 0, 1}},
+			args{-.5, .00000001, 5},
+			-1,
+			true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -218,6 +231,12 @@ func TestPolynomial_Evaluate(t *testing.T) {
 			fields{[]float64{1.0, 1.0}},
 			args{1.0},
 			2.0,
+		},
+		{
+			"Test",
+			fields{[]float64{1.0, 1.0, 2.0}},
+			args{2.0},
+			11.0,
 		},
 	}
 	for _, tt := range tests {
